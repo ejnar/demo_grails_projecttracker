@@ -38,6 +38,10 @@
 
 # "temporary" build files
 /target
+/target-eclipse
 
 # other
 *.iws
+/devDb.h2.db
+/devDb.lock.db
+/devDb.trace.db
