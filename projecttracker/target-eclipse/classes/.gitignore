@@ -1,12 +1,5 @@
-/dbdoc
 /grails
-/hibernate
-/hibernate.cfg.xml
-/jquery.js
-/messages.properties
 /org
-/projecttracker
-/spring
 /ApplicationResources$_run_closure1.class
 /ApplicationResources$_run_closure1_closure2.class
 /ApplicationResources.class
@@ -80,5 +73,6 @@
 /UrlMappings$__clinit__closure1_closure2.class
 /UrlMappings$__clinit__closure1_closure2_closure3.class
 /UrlMappings.class
+/projecttracker
 /resources$_run_closure1.class
 /resources.class

@@ -1,0 +1,18 @@
+03-12 07:14:36 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LISR_PROJECTS[*] SELECT * FROM END_USER"; SQL statement:
+LISR_PROJECTS SELECT * FROM END_USER [42000-173]
+03-12 07:14:46 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LISR_PROJECTS[*] PROJECT SELECT * FROM END_USER"; SQL statement:
+LISR_PROJECTS PROJECT SELECT * FROM END_USER [42000-173]
+03-12 07:14:52 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LISR_PROJECTS[*] PROJECT TASK SELECT * FROM END_USER"; SQL statement:
+LISR_PROJECTS PROJECT TASK SELECT * FROM END_USER [42000-173]
+03-12 07:14:56 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LISR_PROJECTS[*] PROJECT TASK SELECT * FROM END_USER"; SQL statement:
+LISR_PROJECTS PROJECT TASK SELECT * FROM END_USER [42000-173]
+03-12 07:16:39 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TABLE" not found; SQL statement:
+delete table LISR_PROJECTS [42102-173]
+03-12 07:17:35 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TABLE" not found; SQL statement:
+delete table LISR_PROJECTS [42102-173]
