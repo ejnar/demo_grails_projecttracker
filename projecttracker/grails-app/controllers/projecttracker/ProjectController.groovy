@@ -3,7 +3,8 @@ package projecttracker
 
 class ProjectController {
 	def scaffold = true
-	
+
+//	def index = { redirect (action: List)}
 	
 //	def client = new RESTClient( 'http://www.acme.com/' )
 //	def resp = client.get( path : 'products/3322' ) // ACME boomerang

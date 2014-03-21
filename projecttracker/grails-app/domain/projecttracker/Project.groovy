@@ -4,6 +4,7 @@ class Project {
 	String name
     String description
 	Date dueDate
+	String billingType
 	String toString(){
 		"${name}"
 	}
@@ -12,8 +13,9 @@ class Project {
 	
 	
 	static constraints = {
-		name()
+		name(blank: false, uique:true)
 		description()
-		dueDate()
+		dueDate(min:new Date())
+		billingType(inList: ["Hourly", "Milestone", "Non-billable" ])
     }
 }
