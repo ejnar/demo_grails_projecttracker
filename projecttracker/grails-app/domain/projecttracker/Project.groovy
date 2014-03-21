@@ -4,14 +4,18 @@ class Project {
 	String name
     String description
 	Date dueDate
-	
+	String billingType
+	String toString(){
+		"${name}"
+	}
 	static belongsTo = [owner : EndUser]
 	static hasMany = [tasks : Task]
 	
 	
 	static constraints = {
-		name()
+		name(blank: false, uique:true)
 		description()
-		dueDate()
+		dueDate(min:new Date())
+		billingType(inList: ["Hourly", "Milestone", "Non-billable" ])
     }
 }

@@ -2,5 +2,7 @@ package projecttracker
 
 class TaskController {
 	def scaffold = true
-    def index() { }
+	
+//	def index = { redirect (action: List)}
+ 
 }
