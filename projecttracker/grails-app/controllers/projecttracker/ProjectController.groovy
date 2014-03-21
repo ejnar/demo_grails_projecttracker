@@ -3,7 +3,6 @@ package projecttracker
 
 class ProjectController {
 	def scaffold = true
-	def index() { }
 	
 	
 //	def client = new RESTClient( 'http://www.acme.com/' )
