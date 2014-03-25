@@ -25,3 +25,21 @@ alter table task drop constraint FK363585D214B60B [42102-173]
 03-21 18:17:12 jdbc[11]: exception
 org.h2.jdbc.JdbcSQLException: Table "TASK" not found; SQL statement:
 alter table task drop constraint FK36358561F827C2 [42102-173]
+03-25 09:58:30 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+alter table project drop constraint FKED904B195D45685E [42102-173]
+03-25 09:58:30 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TASK" not found; SQL statement:
+alter table task drop constraint FK363585D214B60B [42102-173]
+03-25 09:58:30 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TASK" not found; SQL statement:
+alter table task drop constraint FK36358561F827C2 [42102-173]
+03-25 10:50:31 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+alter table project drop constraint FKED904B195D45685E [42102-173]
+03-25 10:50:31 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TASK" not found; SQL statement:
+alter table task drop constraint FK363585D214B60B [42102-173]
+03-25 10:50:31 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "TASK" not found; SQL statement:
+alter table task drop constraint FK36358561F827C2 [42102-173]

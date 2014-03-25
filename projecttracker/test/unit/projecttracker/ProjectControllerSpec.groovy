@@ -5,9 +5,9 @@ package projecttracker
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(TaskController)
-@Mock(Task)
-class TaskControllerSpec extends Specification {
+@TestFor(ProjectController)
+@Mock(Project)
+class ProjectControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class TaskControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.taskInstanceList
-            model.taskInstanceCount == 0
+            !model.projectInstanceList
+            model.projectInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,32 +30,32 @@ class TaskControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.taskInstance!= null
+            model.projectInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
             request.contentType = FORM_CONTENT_TYPE
-            def task = new Task()
-            task.validate()
-            controller.save(task)
+            def project = new Project()
+            project.validate()
+            controller.save(project)
 
         then:"The create view is rendered again with the correct model"
-            model.taskInstance!= null
+            model.projectInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            task = new Task(params)
+            project = new Project(params)
 
-            controller.save(task)
+            controller.save(project)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/task/show/1'
+            response.redirectedUrl == '/project/show/1'
             controller.flash.message != null
-            Task.count() == 1
+            Project.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -67,11 +67,11 @@ class TaskControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def task = new Task(params)
-            controller.show(task)
+            def project = new Project(params)
+            controller.show(project)
 
         then:"A model is populated containing the domain instance"
-            model.taskInstance == task
+            model.projectInstance == project
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -83,11 +83,11 @@ class TaskControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def task = new Task(params)
-            controller.edit(task)
+            def project = new Project(params)
+            controller.edit(project)
 
         then:"A model is populated containing the domain instance"
-            model.taskInstance == task
+            model.projectInstance == project
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -96,28 +96,28 @@ class TaskControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/task/index'
+            response.redirectedUrl == '/project/index'
             flash.message != null
 
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def task = new Task()
-            task.validate()
-            controller.update(task)
+            def project = new Project()
+            project.validate()
+            controller.update(project)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.taskInstance == task
+            model.projectInstance == project
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            task = new Task(params).save(flush: true)
-            controller.update(task)
+            project = new Project(params).save(flush: true)
+            controller.update(project)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/task/show/$task.id"
+            response.redirectedUrl == "/project/show/$project.id"
             flash.message != null
     }
 
@@ -127,23 +127,23 @@ class TaskControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/task/index'
+            response.redirectedUrl == '/project/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def task = new Task(params).save(flush: true)
+            def project = new Project(params).save(flush: true)
 
         then:"It exists"
-            Task.count() == 1
+            Project.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(task)
+            controller.delete(project)
 
         then:"The instance is deleted"
-            Task.count() == 0
-            response.redirectedUrl == '/task/index'
+            Project.count() == 0
+            response.redirectedUrl == '/project/index'
             flash.message != null
     }
 }
